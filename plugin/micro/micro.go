@@ -149,9 +149,11 @@ func (g *micro) generateService(file *generator.FileDescriptor, service *pb.Serv
 	g.P("func New", servName, "Endpoints () []*", apiPkg, ".Endpoint {")
 	g.P("return []*", apiPkg, ".Endpoint{")
 	for _, method := range service.Method {
-		g.P("&", apiPkg, ".Endpoint{")
-		g.generateEndpoint(servName, method)
-		g.P("},")
+		if method.Options != nil && proto.HasExtension(method.Options, options.E_Http) {
+			g.P("&", apiPkg, ".Endpoint{")
+			g.generateEndpoint(servName, method)
+			g.P("},")
+		}
 	}
 	g.P("}")
 	g.P("}")
@@ -245,9 +247,11 @@ func (g *micro) generateService(file *generator.FileDescriptor, service *pb.Serv
 	g.P("}")
 	g.P("h := &", unexport(servName), "Handler{hdlr}")
 	for _, method := range service.Method {
-		g.P("opts = append(opts, ", apiPkg, ".WithEndpoint(&", apiPkg, ".Endpoint{")
-		g.generateEndpoint(servName, method)
-		g.P("}))")
+		if method.Options != nil && proto.HasExtension(method.Options, options.E_Http) {
+			g.P("opts = append(opts, ", apiPkg, ".WithEndpoint(&", apiPkg, ".Endpoint{")
+			g.generateEndpoint(servName, method)
+			g.P("}))")
+		}
 	}
 	g.P("return s.Handle(s.NewHandler(&", servName, "{h}, opts...))")
 	g.P("}")
@@ -302,6 +306,9 @@ func (g *micro) generateEndpoint(servName string, method *pb.MethodDescriptorPro
 	g.P("Name:", fmt.Sprintf(`"%s.%s",`, servName, method.GetName()))
 	g.P("Path:", fmt.Sprintf(`[]string{"%s"},`, path))
 	g.P("Method:", fmt.Sprintf(`[]string{"%s"},`, meth))
+	if len(rule.GetGet()) == 0 {
+		g.P("Body:", fmt.Sprintf(`"%s",`, rule.GetBody()))
+	}
 	if method.GetServerStreaming() || method.GetClientStreaming() {
 		g.P("Stream: true,")
 	}

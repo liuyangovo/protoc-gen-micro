@@ -52,9 +52,9 @@ import (
 	"io/ioutil"
 	"os"
 
+	"github.com/asim/protoc-gen-go-micro/v3/generator"
+	_ "github.com/asim/protoc-gen-go-micro/v3/plugin/micro"
 	"github.com/golang/protobuf/proto"
-	"github.com/micro/protoc-gen-micro/v2/generator"
-	_ "github.com/micro/protoc-gen-micro/v2/plugin/micro"
 )
 
 func main() {

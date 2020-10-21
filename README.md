@@ -5,7 +5,7 @@ This is protobuf code generation for Go Micro. We use protoc-gen-go-micro to red
 ## Install
 
 ```
-go get github.com/asim/protoc-gen-go-micro/v2
+go get github.com/asim/protoc-gen-go-micro/v3
 ```
 
 Also required: 

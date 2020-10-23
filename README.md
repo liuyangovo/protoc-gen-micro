@@ -36,7 +36,7 @@ message Response {
 Generate the code
 
 ```
-protoc --proto_path=$GOPATH/src:. --go_micro_out=. --go_out=. greeter.proto
+protoc --proto_path=$GOPATH/src:. --go-micro_out=. --go_out=. greeter.proto
 ```
 
 Your output result should be:
@@ -76,7 +76,7 @@ client := proto.NewGreeterService("greeter", service.Client())
 ### Errors
 
 If you see an error about `protoc-gen-go-micro` not being found or executable, it's likely your environment may not be 
-configured correctly. If you've already installed `protoc`, `protoc-gen-go`, and `protoc-gen-micro` ensure you've included 
+configured correctly. If you've already installed `protoc`, `protoc-gen-go`, and `protoc-gen-go-micro` ensure you've included 
 `$GOPATH/bin` in your `PATH`.
 
 Alternative specify the Go plugin paths as arguments to the `protoc` command

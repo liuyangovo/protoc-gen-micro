@@ -5,14 +5,15 @@ package greeter
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
 	math "math"
-)
 
-import (
+	proto "github.com/golang/protobuf/proto"
+
 	context "context"
-	client "github.com/asim/go-micro/v3/client"
-	server "github.com/asim/go-micro/v3/server"
+
+	client "github.com/asim/nitro/v3/client"
+
+	server "github.com/asim/nitro/v3/server"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.

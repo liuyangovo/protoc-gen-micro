@@ -14,8 +14,8 @@ import (
 // relative to the import_prefix of the generator.Generator.
 const (
 	contextPkgPath = "context"
-	clientPkgPath  = "github.com/asim/go-micro/v3/client"
-	serverPkgPath  = "github.com/asim/go-micro/v3/server"
+	clientPkgPath  = "github.com/asim/nitro/v3/client"
+	serverPkgPath  = "github.com/asim/nitro/v3/server"
 )
 
 func init() {

@@ -1,6 +1,6 @@
 # protoc-gen-nitro
 
-This is protobuf code generation for Nitro. We use protoc-gen-go-micro to reduce boilerplate code.
+This is protobuf code generation for Nitro. We use protoc-gen-nitro to reduce boilerplate code.
 
 ## Install
 

@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/asim/protoc-gen-go-micro/v3/generator"
+	"github.com/asim/protoc-gen-nitro/v3/generator"
 	pb "github.com/golang/protobuf/protoc-gen-go/descriptor"
 )
 

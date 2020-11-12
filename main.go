@@ -29,10 +29,10 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-// protoc-gen-go-micro is a plugin for the Google protocol buffer compiler to generate
+// protoc-gen-nitro is a plugin for the Google protocol buffer compiler to generate
 // Go code.  Run it by building this program and putting it in your path with
 // the name
-// 	protoc-gen-go-micro
+// 	protoc-gen-nitro
 // That word 'micro' at the end becomes part of the option string set for the
 // protocol compiler, so once the protocol compiler (protoc) is installed
 // you can run
@@ -52,8 +52,8 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/asim/protoc-gen-go-micro/v3/generator"
-	_ "github.com/asim/protoc-gen-go-micro/v3/plugin/micro"
+	"github.com/asim/protoc-gen-nitro/v3/generator"
+	_ "github.com/asim/protoc-gen-nitro/v3/plugin/micro"
 	"github.com/golang/protobuf/proto"
 )
 

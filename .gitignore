@@ -29,7 +29,7 @@ coverage.txt
 coverage.out
 
 # ignore locally built binaries
-protoc-gen-go-micro
+protoc-gen-nitro
 dist
 
 # idea

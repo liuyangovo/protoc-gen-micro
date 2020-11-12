@@ -53,7 +53,7 @@ import (
 	"os"
 
 	"github.com/asim/protoc-gen-nitro/v3/generator"
-	_ "github.com/asim/protoc-gen-nitro/v3/plugin/micro"
+	_ "github.com/asim/protoc-gen-nitro/v3/plugin/nitro"
 	"github.com/golang/protobuf/proto"
 )
 

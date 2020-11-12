@@ -83,7 +83,7 @@ Alternative specify the Go plugin paths as arguments to the `protoc` command
 
 ```
 protoc --plugin=protoc-gen-go=$GOPATH/bin/protoc-gen-go \
---plugin=protoc-gen-go-micro=$GOPATH/bin/protoc-gen-nitro \
+--plugin=protoc-gen-nitro=$GOPATH/bin/protoc-gen-nitro \
 --proto_path=$GOPATH/src:. --nitro_out=. --go_out=. greeter.proto
 ```
 

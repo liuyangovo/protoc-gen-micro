@@ -312,7 +312,7 @@ func (d *FileDescriptor) goFileName(pathType pathType) string {
 	if ext := path.Ext(name); ext == ".proto" || ext == ".protodevel" {
 		name = name[:len(name)-len(ext)]
 	}
-	name += ".pb.micro.go"
+	name += ".pb.nitro.go"
 
 	if pathType == pathTypeSourceRelative {
 		return name
@@ -497,7 +497,7 @@ func (g *Generator) CommandLineParameters(parameter string) {
 	if pluginList != "" {
 		// Amend the set of plugins.
 		enabled := map[string]bool{
-			"micro": true,
+			"nitro": true,
 		}
 		for _, name := range strings.Split(pluginList, "+") {
 			enabled[name] = true
